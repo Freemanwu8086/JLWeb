@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.freemanwu.dao.ResumeDAO">
+<!--    save-->
+    <insert id="save" parameterType="Resume">
+        insert into resume (name,sex,height,eduLevel,zzmm,familyAddress,birthday,address,marriage,nationality,id,email,school,graduTime,major,hobby,introduction)
+          values (#{name},#{sex},#{height},#{eduLevel},#{zzmm},#{familyAddress},#{birthday},#{address},#{marriage},#{nationality},#{id},#{email},#{school},#{graduTime},#{major},#{hobby},#{introduction});
+    </insert>
+<!--    findAll-->
+    <select id="findAll" resultType="Resume">
+        select * from resume;
+    </select>
+
+<!-- delete-->
+    <delete id="delete" parameterType="java.lang.String">
+        delete from resume where id = #{id};
+    </delete>
+
+<!--findById-->
+    <select id="findById" parameterType="java.lang.String" resultType="Resume">
+        select * from resume where id = #{id};
+    </select>
+
+
+
+</mapper>
