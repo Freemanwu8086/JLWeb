@@ -114,7 +114,7 @@ border: 10px solid #ccc; border-radius: 16px;">
 </table>
 
 
-        <input style="align-content: center" type="submit" value="Save Your Information">
+        <input style="align-content: center" type="submit" value="保存您的信息">
 
 </form>
 </body>

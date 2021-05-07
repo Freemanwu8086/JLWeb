@@ -38,4 +38,8 @@ public class ResumeServiceImpl implements ResumeService {
         return resumeDAO.findById(id);
     }
 
+    @Override
+    public void update(Resume resume) {
+        resumeDAO.update(resume);
+    }
 }

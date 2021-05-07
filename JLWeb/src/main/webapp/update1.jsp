@@ -7,14 +7,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>测试删除用户</title>
+    <title>测试用户信息更新</title>
 </head>
 <body>
-    <h1>删除用户简历信息</h1>
-    <form action="${pageContext.request.contextPath}/resume/delete" method="post">
-       请输入您想删除的用户的身份证号以删除用户信息：<input type="text" name="id"/> <br>
+    <h1>更新用户信息</h1>
+    <form action="${pageContext.request.contextPath}/resume/findByIdUpdate" method="post">
+        请输入您想修改信息对应的身份证号：<input type="text" name="id"/> <br>
 
-        <input type="submit" value="delete this user's information">
+        <input type="submit" value="重构用户信息">
     </form>
 
 

@@ -10,7 +10,4 @@
     <select id="findByNameAndPassword" resultType="User" parameterType="java.lang.String">
         select * from user where name = #{name} and password = #{password};
     </select>
-
-
-
 </mapper>

@@ -55,9 +55,16 @@ public class ResumeController {
     }
 
     @RequestMapping("update")
-    public String update(String id){
-        resumeService.delete(id);
+    public String update(Resume resume){
+        resumeService.update(resume);
         return "add";
+    }
+
+    @RequestMapping("findByIdUpdate")
+    public String findByIdUpdate(String id,HttpServletRequest request) {
+        Resume resume = resumeService.findById(id);
+        request.setAttribute("resume",resume);
+        return "update2";
     }
 
 }

@@ -7,15 +7,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Add User</title>
+    <title>测试管理员注册</title>
 </head>
 <body>
-    <h1>Create your own Account!</h1>
+    <h1>创建您的账户！</h1>
     <form action="${pageContext.request.contextPath}/user/save" method="post">
-        Please input your UserName: <input type="text" name="name"> <br>
-        Please input your Password: <input type="password" name="password"><br>
+        请输入您的用户名：<input type="text" name="name"> <br>
+        请输入您的密码：<input type="password" name="password"><br>
 
-        <input type="submit" value="Reg">
+        <input type="submit" value="注册">
     </form>
 
 

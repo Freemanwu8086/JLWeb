@@ -7,22 +7,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Upload And Download</title>
+    <title>测试上传与下载</title>
 </head>
 <body>
-    <h1>File Upload</h1>
+    <h1>文件上传</h1>
     <form action="${pageContext.request.contextPath}/file/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="img"/> <br>
+        <input type="file" name="点击上传文件"/> <br>
         <br>
         <br>
-        <input type="submit" value="Upload File">
+        <input type="submit" value="上传文件">
     </form>
 
-    <h1>File Down</h1>
+    <h1>文件下载</h1>
     <ul>
         <li>
-            aa.txt:<a href="${pageContext.request.contextPath}/file/download?fileName=aa.txt">Open Online</a> <a href="${pageContext.request.contextPath}/file/download?fileName=aa.txt&openStyle=attch">Attachment Down</a> <br>
-            Resume Model:<a href="${pageContext.request.contextPath}/file/download?fileName=index.jsp">Open Online</a> <a href="${pageContext.request.contextPath}/file/download?fileName=index.jsp&openStyle=attch">Attachment Down</a>
+            aa.txt:<a href="${pageContext.request.contextPath}/file/download?fileName=aa.txt">在线打开</a> <a href="${pageContext.request.contextPath}/file/download?fileName=aa.txt&openStyle=attch">附件下载</a> <br>
+            Resume Model:<a href="${pageContext.request.contextPath}/file/download?fileName=index.jsp">在线打开</a> <a href="${pageContext.request.contextPath}/file/download?fileName=index.jsp&openStyle=attch">附件下载</a>
         </li>
     </ul>
 

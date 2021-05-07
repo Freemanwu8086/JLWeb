@@ -22,6 +22,12 @@
         select * from resume where id = #{id};
     </select>
 
+<!--    update-->
+    <update id="update" parameterType="Resume">
+     update resume set name=#{name}, sex=#{sex}, height=#{height}, eduLevel=#{eduLevel}, zzmm=#{zzmm}, familyAddress=#{familyAddress}, birthday=#{birthday}, address=#{address}, marriage=#{marriage}, nationality=#{nationality}, email=#{email}, school=#{school}, graduTime=#{graduTime}, major=#{major}, hobby=#{hobby}, introduction=#{introduction}
+    where id = #{id};
+    </update>
+
 
 
 </mapper>

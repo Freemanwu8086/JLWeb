@@ -11,7 +11,7 @@
     <title>Test FindById</title>
 </head>
 <body>
-    <h1>test findById list</h1>
+    <h1>测试 通过身份证号查询</h1>
 <%--    ${resume.toString()}<br>--%>
     <style>
         body {
@@ -48,7 +48,7 @@ border: 10px solid #ccc; border-radius: 16px;">
 
                 <td class="style1">政治面貌</td>
                 <td>
-                    <input type="text" value="value="${resume.zzmm}">
+                    <input type="text" value="${resume.zzmm}">
                 </td>
             </tr>
             <tr height="50" style="text-align: center;">
@@ -97,6 +97,6 @@ border: 10px solid #ccc; border-radius: 16px;">
             </tr>
 
         </table>
-    <a href="${pageContext.request.contextPath}/index.jsp">back to the main page</a> <br>
+    <a href="${pageContext.request.contextPath}/index.jsp">回到主页</a> <br>
 </body>
 </html>

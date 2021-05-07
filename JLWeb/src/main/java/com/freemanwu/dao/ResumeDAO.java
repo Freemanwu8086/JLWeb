@@ -13,4 +13,5 @@ public interface ResumeDAO {
 
     Resume findById(String id);
 
+    void update(Resume resume );
 }

@@ -10,11 +10,11 @@
     <title>Test Add User</title>
 </head>
 <body>
-    <h1>Query One User information</h1>
+    <h1>搜索一个用户的信息</h1>
     <form action="${pageContext.request.contextPath}/resume/findById" method="post">
-        Please input id which you want to query:<input type="text" name="id"> <br>
+        请输入您要查询信息所对应的身份证号：<input type="text" name="id"> <br>
 
-        <input type="submit" value="Let's Query!">
+        <input type="submit" value="让我们查询！">
     </form>
 
 
