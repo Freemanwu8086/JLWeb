@@ -21,7 +21,7 @@ public class UserController {
     public String save(User user){
         try {
             userService.save(user);
-            return "findAll";
+            return "WelcomeAdmin";
         } catch (Exception e) {
             e.printStackTrace();
             return "AdminAdd";
@@ -35,7 +35,7 @@ public class UserController {
 
         if (loginUser!= null){
             session.setAttribute("loginUser",user);
-            return "findAll";
+            return "redirect:/resume/findAll";
         }else { //login failed.
             return "WelcomeAdmin";
         }

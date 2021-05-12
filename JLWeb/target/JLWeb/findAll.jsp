@@ -12,7 +12,7 @@
 <body>
     <h1>显示所有用户列表</h1>
     <c:forEach items="${requestScope.resumes}" var="resume">
-        ${resume.toString()} <br>
+        <input type="checkbox"> ${resume.name}| ${resume.school} <input type="submit" value="显示详情"> <br>
     </c:forEach>
 
 <a href="${pageContext.request.contextPath}/add.jsp">增加用户简历信息</a> <br>
