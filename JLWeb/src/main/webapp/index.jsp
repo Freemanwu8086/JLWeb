@@ -1,18 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html; UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 <html>
-<head>
-    <meta charset = "UTF-8">
-    <link rel="stylesheet" href="./css1.css">
-</head>
-<style>
-    body {
-        background-color: white;
-    }
-</style>
+<body style="background-color: #99ffff;text-align: center">
 
-<body style="font-family:STHupo;height: 600px; line-height: 600px; font-size: 100px; text-align: center">
-<h6>Welcome</h6>
+<h1 style="height:550px;line-height:550px;font-size:55px;"> 欢迎使用简历系统</h1>
+<a href="${pageContext.request.contextPath}/WelcomeUser.jsp"
+   style="text-decoration:none;text-align: center">用户登录</a>
 
 
 

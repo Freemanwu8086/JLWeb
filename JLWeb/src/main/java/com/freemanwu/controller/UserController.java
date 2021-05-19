@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -30,12 +31,13 @@ public class UserController {
 
 
     @RequestMapping("login")
-    public String login(User user, HttpSession session){
+    public String login(User user, HttpSession session, HttpServletRequest request){
         User loginUser = userService.findByNameAndPassword(user);
+        request.setAttribute("loginUser",loginUser);
 
         if (loginUser!= null){
             session.setAttribute("loginUser",user);
-            return "redirect:/resume/findAll";
+            return "redirect:/resume/findAll1";
         }else { //login failed.
             return "WelcomeAdmin";
         }
@@ -46,7 +48,7 @@ public class UserController {
     public String userSave(User user){
         try {
             userService.save(user);
-            return "findAllUser";
+            return "WelcomeUser";
         } catch (Exception e) {
             e.printStackTrace();
             return "UserAdd";
@@ -54,9 +56,9 @@ public class UserController {
     }
 
     @RequestMapping("userLogin")
-    public String userLogin(User user, HttpSession session){
+    public String userLogin(User user, HttpSession session, HttpServletRequest request){
         User loginUser = userService.findByNameAndPassword(user);
-
+        request.setAttribute("loginUser",loginUser);
         if (loginUser!= null){
             session.setAttribute("loginUser",user);
             return "findAllUser";

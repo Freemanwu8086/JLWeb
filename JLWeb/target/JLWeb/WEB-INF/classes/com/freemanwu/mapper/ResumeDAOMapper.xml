@@ -7,9 +7,9 @@
         insert into resume (name,sex,height,eduLevel,zzmm,familyAddress,birthday,address,marriage,nationality,id,email,school,graduTime,major,hobby,introduction)
           values (#{name},#{sex},#{height},#{eduLevel},#{zzmm},#{familyAddress},#{birthday},#{address},#{marriage},#{nationality},#{id},#{email},#{school},#{graduTime},#{major},#{hobby},#{introduction});
     </insert>
-<!--    findAll-->
-    <select id="findAll" resultType="Resume">
-        select * from resume;
+<!--    findAll 0~5-->
+    <select id="findAll1" resultType="Resume">
+        select * from resume limit 0,5;
     </select>
 
 <!-- delete-->
@@ -27,6 +27,26 @@
      update resume set name=#{name}, sex=#{sex}, height=#{height}, eduLevel=#{eduLevel}, zzmm=#{zzmm}, familyAddress=#{familyAddress}, birthday=#{birthday}, address=#{address}, marriage=#{marriage}, nationality=#{nationality}, email=#{email}, school=#{school}, graduTime=#{graduTime}, major=#{major}, hobby=#{hobby}, introduction=#{introduction}
     where id = #{id};
     </update>
+
+<!--   根据名称模糊查询 -->
+    <select id="findByName" resultType="Resume" parameterType="java.lang.String">
+        select * from resume where name like CONCAT(CONCAT('%',#{name}),'%');
+    </select>
+
+<!--delete once for all-->
+    <select id="deleteMany" parameterType="java.lang.String">
+        delete from resume where id in("&amp;request")
+    </select>
+
+<!--   findAll 6~10 -->
+    <select id="findAll2" resultType="Resume">
+        select * from resume limit 5,5;
+    </select>
+
+<!--   findAll 10~15 -->
+    <select id="findAll3" resultType="Resume">
+        select * from resume limit 10,5;
+    </select>
 
 
 

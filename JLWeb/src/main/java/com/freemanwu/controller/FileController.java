@@ -22,32 +22,33 @@ import java.util.UUID;
 @Controller
 @RequestMapping("file")
 public class FileController {
+
     //deal with file upload.
     @RequestMapping("upload")
     public String upload(MultipartFile img, HttpServletRequest request) throws IOException {
-        System.out.println("file name " + img.getOriginalFilename());
-        System.out.println("file size " + img.getSize());
-        System.out.println("file type " + img.getContentType());
-        // file upload
-        //1.ues relative path to get upload realPath
+            System.out.println("file name " + img.getOriginalFilename());
+            System.out.println("file size " + img.getSize());
+            System.out.println("file type " + img.getContentType());
+            // file upload
+            //1.ues relative path to get upload realPath
 //        String realPath = request.getRealPath("/uploads");
-        String realPath = request.getSession().getServletContext().getRealPath("/uploads");
+            String realPath = request.getSession().getServletContext().getRealPath("/uploads");
 
-        //2: update originalFilename
-        String extension = FilenameUtils.getExtension(img.getOriginalFilename());
-        String newFilename = UUID.randomUUID().toString().replace("-","") + "." + extension;
+            //2: update originalFilename
+            String extension = FilenameUtils.getExtension(img.getOriginalFilename());
+            String newFilename = UUID.randomUUID().toString().replace("-", "") + "." + extension;
 
-        //3:generate today's dir.
-        LocalDate now = LocalDate.now();
-        File dateDir = new File(realPath, now.toString());
-        if(!dateDir.exists()) dateDir.mkdirs();
+            //3:generate today's dir.
+            LocalDate now = LocalDate.now();
+            File dateDir = new File(realPath, now.toString());
+            if (!dateDir.exists()) dateDir.mkdirs();
 
 
-        //4.put file to uploads' Path.
+            //4.put file to uploads' Path.
 
-        img.transferTo(new File(dateDir,newFilename));
+            img.transferTo(new File(dateDir, newFilename));
 
-        return "index";
+            return "index";
     }
 
 
@@ -57,25 +58,26 @@ public class FileController {
      */
     @RequestMapping("download")
     public void download(String openStyle,String fileName, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        openStyle = openStyle == null?"inline":"attachment";
 
-        System.out.println("downLoad File Name: " + fileName );
+            openStyle = openStyle == null ? "inline" : "attachment";
 
-        //1.ues relative path to get down realPath on server.
-        String realPath = request.getSession().getServletContext().getRealPath("/down");
+            System.out.println("downLoad File Name: " + fileName);
 
-        //2.use file input Stream to read file.
-        FileInputStream fileInputStream = new FileInputStream(new File(realPath, fileName));
+            //1.ues relative path to get down realPath on server.
+            String realPath = request.getSession().getServletContext().getRealPath("/down");
 
-        //3.get response outputStream
-        response.setContentType("text/plain; charset=UTF-8");
+            //2.use file input Stream to read file.
+            FileInputStream fileInputStream = new FileInputStream(new File(realPath, fileName));
 
-        //4.attachment download.   OR default:   inline (Online open)
-        response.setHeader("content-disposition",openStyle+";fileName= " + URLEncoder.encode(fileName,"UTF-8"));
-        ServletOutputStream outputStream = response.getOutputStream();
+            //3.get response outputStream
+            response.setContentType("text/plain; charset=UTF-8");
 
-        //5.deal down Stream copy.
-        //aa.txt 1033 bytes
+            //4.attachment download.   OR default:   inline (Online open)
+            response.setHeader("content-disposition", openStyle + ";fileName= " + URLEncoder.encode(fileName, "UTF-8"));
+            ServletOutputStream outputStream = response.getOutputStream();
+
+            //5.deal down Stream copy.
+            //aa.txt 1033 bytes
 
 //        int len;
 //        byte[] b = new byte[1024];
@@ -88,8 +90,8 @@ public class FileController {
 //        fileInputStream.close();
 //        outputStream.close();
 
-        IOUtils.copy(fileInputStream,outputStream);
-        IOUtils.closeQuietly(fileInputStream);
-        IOUtils.closeQuietly(outputStream);
-    }
+            IOUtils.copy(fileInputStream, outputStream);
+            IOUtils.closeQuietly(fileInputStream);
+            IOUtils.closeQuietly(outputStream);
+        }
 }

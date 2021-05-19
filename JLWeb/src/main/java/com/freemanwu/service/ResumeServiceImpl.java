@@ -22,8 +22,18 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Resume> findAll() {
-        return resumeDAO.findAll();
+    public List<Resume> findAll1() {
+        return resumeDAO.findAll1();
+    }
+
+    @Override
+    public List<Resume> findAll2() {
+        return resumeDAO.findAll2();
+    }
+
+    @Override
+    public List<Resume> findAll3() {
+        return resumeDAO.findAll3();
     }
 
     @Override
@@ -41,5 +51,17 @@ public class ResumeServiceImpl implements ResumeService {
     @Override
     public void update(Resume resume) {
         resumeDAO.update(resume);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Resume> findByName(String name) {
+        return resumeDAO.findByName(name);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void deleteMany(String id) {
+        resumeDAO.deleteMany(id);
     }
 }

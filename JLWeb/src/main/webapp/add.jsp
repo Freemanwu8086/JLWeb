@@ -20,7 +20,7 @@ background-color:rgba(255, 99, 71, 0.4);
 border: 10px solid #ccc; border-radius: 16px;">
     个人简历
 </h1>
-<body>
+<body style="text-align: center">
 <form action="${pageContext.request.contextPath}/resume/save" method="post">
 <table border="2"
        cellspacing="1px"
@@ -114,7 +114,7 @@ border: 10px solid #ccc; border-radius: 16px;">
 </table>
 
 
-        <input style="align-content: center" type="submit" value="保存您的信息">
+        <input style="margin-top: 10px;" type="submit" value="保存您的信息">
 
 </form>
 </body>
