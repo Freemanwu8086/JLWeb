@@ -10,7 +10,7 @@
     <title>测试 查询所有</title>
 </head>
 <body align="right-side"
-      style="font-family:;width:100%;height:800px;">
+      style="font-family:;width:100%;height:800px;background-color: #99ffff">
 
 <div style="padding:10px;border-radius:20px;
 	border:1px solid #000000;
@@ -19,7 +19,7 @@
 
 		">
     <div align="left"></div>
-    <p>现在您所登录的管理员身份为：${loginUser.name}</p>
+    <p>现在您所登录的管理员身份为：${loginUser.uname}</p>
 
     <h1 align="center">显示所有用户信息</h1>
     <form action="${pageContext.request.contextPath}/resume/findByName" method="post">
@@ -66,9 +66,15 @@
     <form action="${pageContext.request.contextPath}/resume/findById" method="post">
         <div style="width:19%; float:left;">
             <input type="submit" value="查看简历详情" style="border-radius:20px">
-            <input type="test" name="id" value="${resume.id}" style="display: none">
+            <input type="text" name="id" value="${resume.id}" style="display: none">
         </div>
     </form>
+        <form action="${pageContext.request.contextPath}/resume/findByIdUpdate" method="post">
+            <div style="width:4%; float:left;">
+                <input type="submit" value="修改" style="border-radius:20px">
+                <input type="test" name="id" value="${resume.id}" style="display: none">
+            </div>
+        </form>
 
         <p>________________________________________________________________________________________________________________________________________________________________</p>
     </c:forEach>

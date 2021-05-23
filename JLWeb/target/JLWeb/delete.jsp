@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试删除用户</title>
 </head>
-<body background="aaa.jpg">
+<body background="aaa.jpg" style="background-color: #99ffff">
 <h1 align="center">删除用户简历信息</h1>
 <form action="${pageContext.request.contextPath}/resume/delete" method="post">
     <div align="center"

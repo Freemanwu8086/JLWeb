@@ -48,7 +48,7 @@ public class FileController {
 
             img.transferTo(new File(dateDir, newFilename));
 
-            return "index";
+            return "uploadSuccess";
     }
 
 

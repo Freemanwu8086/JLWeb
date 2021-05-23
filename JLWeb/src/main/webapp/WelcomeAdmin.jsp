@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试管理员登录与注册</title>
 </head>
-<body background="aaa.jpg">
+<body background="aaa.jpg" style="background-color: #99ffff">
 <h1 align="center">登录您的管理员账号！</h1>
 
-<form action="${pageContext.request.contextPath}/user/login" method="post"style="width:800px">
+<form action="${pageContext.request.contextPath}/user/login" method="post" style="width:800px">
     <div align="center"
          style="border:1px solid #000;background-color:#99ffff;
 		height:200px;width:300px;
@@ -23,7 +23,7 @@
 		-webkit-box-shadow: #ccc 0px 0px 10px;
  		-moz-box-shadow: #ccc 0px 0px 10px;
  		box-shadow: #bbb 10px 10px 30px;"><br>
-        请输入您的用户名： <input type="text" name="name"> <br><br>
+        请输入您的用户名： <input type="text" name="uname"> <br><br>
         请输入您的密码： <br><input type="password" name="password"><br><br>
         <input type="submit" value="登录">
     </div>

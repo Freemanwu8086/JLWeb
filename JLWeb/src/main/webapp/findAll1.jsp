@@ -19,7 +19,7 @@
 
 		">
     <div align="left"></div>
-    <p>现在您所登录的管理员身份为：${loginUser.name}</p>
+    <p>现在您所登录的管理员身份为：${loginUser.uname}</p>
 
     <h1 align="center">显示所有用户信息</h1>
     <form action="${pageContext.request.contextPath}/resume/findByName" method="post">
@@ -70,6 +70,12 @@
         </div>
     </form>
 
+        <form action="${pageContext.request.contextPath}/resume/findByIdUpdate" method="post">
+            <div style="width:4%; float:left;">
+                <input type="submit" value="修改" style="border-radius:20px">
+                <input type="text" name="id" value="${resume.id}" style="display: none">
+            </div>
+        </form>
         <p>________________________________________________________________________________________________________________________________________________________________</p>
     </c:forEach>
     <div style="float: right;margin-top: 6px;margin-left: 0px;margin-right: 600px;">

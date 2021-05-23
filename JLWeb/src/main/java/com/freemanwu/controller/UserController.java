@@ -25,7 +25,7 @@ public class UserController {
             return "WelcomeAdmin";
         } catch (Exception e) {
             e.printStackTrace();
-            return "AdminAdd";
+            return "error";
         }
     }
 
@@ -39,7 +39,7 @@ public class UserController {
             session.setAttribute("loginUser",user);
             return "redirect:/resume/findAll1";
         }else { //login failed.
-            return "WelcomeAdmin";
+            return "error";
         }
 
     }
@@ -51,7 +51,7 @@ public class UserController {
             return "WelcomeUser";
         } catch (Exception e) {
             e.printStackTrace();
-            return "UserAdd";
+            return "error";
         }
     }
 
@@ -63,7 +63,7 @@ public class UserController {
             session.setAttribute("loginUser",user);
             return "findAllUser";
         }else { //login failed.
-            return "WelcomeUser";
+            return "error";
         }
 
     }

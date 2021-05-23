@@ -9,9 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试用户功能</title>
 </head>
-<body align="center">
+<body align="center" style="text-align: center;background-color: #99ffff">
     <h1>用户功能界面</h1>
-    <p>现在您所登录的用户身份为：${loginUser.name}</p>
+    <p>现在您所登录的用户身份为：${loginUser.uname}</p>
 
 <a style="
 			width:80%;

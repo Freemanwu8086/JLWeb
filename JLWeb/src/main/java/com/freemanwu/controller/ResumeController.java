@@ -51,7 +51,7 @@ public class ResumeController {
             return "redirect:/resume/findAll1";
         } catch (Exception e) {
             e.printStackTrace();
-            return "redirect:/add";
+            return "error";
         }
     }
 
@@ -62,34 +62,54 @@ public class ResumeController {
             return "redirect:/resume/findAll1";
         } catch (Exception e) {
             e.printStackTrace();
-            return "redirect:/delete";
+            return "error";
         }
     }
 
     @RequestMapping("findById")
     public String findById(String id, HttpServletRequest request) {
-        Resume resume = resumeService.findById(id);
-        request.setAttribute("resume", resume);
-        return "findByIdResult";
+        try {
+            Resume resume = resumeService.findById(id);
+            request.setAttribute("resume", resume);
+            return "findByIdResult";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     @RequestMapping("update")
     public String update(Resume resume) {
-        resumeService.update(resume);
-        return "add";
+        try {
+            resumeService.update(resume);
+            return "add";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     @RequestMapping("findByIdUpdate")
     public String findByIdUpdate(String id, HttpServletRequest request) {
-        Resume resume = resumeService.findById(id);
-        request.setAttribute("resume", resume);
-        return "update2";
+        try {
+            Resume resume = resumeService.findById(id);
+            request.setAttribute("resume", resume);
+            return "update2";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     @RequestMapping("findByName")
     public String findByName(String name, HttpServletRequest request) {
-        List<Resume> resume = resumeService.findByName(name);
-        request.setAttribute("resumes", resume);
-        return "findByName";
+        try {
+            List<Resume> resume = resumeService.findByName(name);
+            request.setAttribute("resumes", resume);
+            return "findByName";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 }

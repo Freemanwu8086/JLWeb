@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试用户注册</title>
 </head>
-<body background="aaa.jpg">
+<body background="aaa.jpg" style="background-color: #99ffff">
     <h1 align="center">创建您的账户！</h1>
     <form action="${pageContext.request.contextPath}/user/userSave" method="post">
         <div align="center"
@@ -22,7 +22,7 @@
 		-webkit-box-shadow: #ccc 0px 0px 10px;
  		-moz-box-shadow: #ccc 0px 0px 10px;
  		box-shadow: #bbb 10px 10px 30px;"><br>
-        请输入您的用户名:<br><input type="text" name="name"> <br>
+        请输入您的用户名:<br><input type="text" name="uname"> <br>
         请输入您的密码：<br><input type="password" name="password"><br>
 
         <input type="submit" value="注册">

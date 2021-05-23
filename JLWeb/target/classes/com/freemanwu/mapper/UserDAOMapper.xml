@@ -4,10 +4,10 @@
 <mapper namespace="com.freemanwu.dao.UserDAO">
 <!--    save-->
     <insert id="save" parameterType="User">
-        insert into user (name,password) values (#{name}, #{password});
+        insert into user (uname,password) values (#{uname}, #{password});
     </insert>
 
     <select id="findByNameAndPassword" resultType="User" parameterType="java.lang.String">
-        select * from user where name = #{name} and password = #{password};
+        select * from user where uname = #{uname} and password = #{password};
     </select>
 </mapper>

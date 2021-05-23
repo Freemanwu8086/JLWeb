@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试用户登录和注册</title>
 </head>
-<body background="aaa.jpg">
+<body background="aaa.jpg" style="background-color: #99ffff">
     <h1 align="center">登录你的用户账户！</h1>
     <form action="${pageContext.request.contextPath}/user/userLogin" method="post">
         <div align="center"
@@ -22,7 +22,7 @@
 		-webkit-box-shadow: #ccc 0px 0px 10px;
  		-moz-box-shadow: #ccc 0px 0px 10px;
  		box-shadow: #bbb 10px 10px 30px;"><br>
-            请输入您的用户名： <input type="text" name="name"> <br><br>
+            请输入您的用户名： <input type="text" name="uname"> <br><br>
             请输入您的密码： <br><input type="password" name="password"><br><br>
             <input type="submit" value="登录">
         </div>
