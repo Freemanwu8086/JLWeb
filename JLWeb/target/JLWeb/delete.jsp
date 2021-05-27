@@ -24,7 +24,7 @@
  		box-shadow: #bbb 10px 10px 30px;
 		text-align:center;"><br>
 
-        请输入您想删除的用户的身份证号以删除用户信息：<br><br><input type="text" name="id"/>
+        请输入您想删除的用户的身份证号后8位以删除用户信息：<br><br><input type="text" name="id"/>
         <br><br><br>
         <input type="submit" value="删除该用户的信息">
     </div>

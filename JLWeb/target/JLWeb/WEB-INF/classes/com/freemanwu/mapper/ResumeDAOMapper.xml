@@ -33,10 +33,7 @@
         select * from resume where name like CONCAT(CONCAT('%',#{name}),'%');
     </select>
 
-<!--delete once for all-->
-    <select id="deleteMany" parameterType="java.lang.String">
-        delete from resume where id in("&amp;request")
-    </select>
+
 
 <!--   findAll 6~10 -->
     <select id="findAll2" resultType="Resume">
@@ -48,6 +45,12 @@
         select * from resume limit 10,5;
     </select>
 
-
+    <!--delete once for all-->
+    <delete id="deleteList" parameterType="java.lang.Integer">
+        delete from resume where id in
+        <foreach collection="array" item="ids" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
 
 </mapper>

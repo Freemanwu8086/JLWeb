@@ -26,7 +26,7 @@
 			background-color:#CCCCCC;
 			text-decoration:none
 			"
-   align="middle" href="${pageContext.request.contextPath}/add.jsp">增加用户简历信息</a> <br>
+   align="middle" href="${pageContext.request.contextPath}/addUser.jsp">增加用户简历信息</a> <br>
 
     <a style="
 			width:80%;

@@ -1,14 +1,12 @@
 package com.freemanwu.controller;
 
 import com.freemanwu.entity.Resume;
-import com.freemanwu.entity.User;
 import com.freemanwu.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -44,26 +42,38 @@ public class ResumeController {
 
 
     @RequestMapping("save")
-    public String save(User user, Resume resume, HttpServletRequest request, HttpSession session) {
+    public String save(Resume resume) {
         try {
-            session.setAttribute("loginUser", user);
             resumeService.save(resume);
-            return "redirect:/resume/findAll1";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "redirect:/resume/findAll1";
+    }
+
+    @RequestMapping("userSave")
+    public String usersave(Resume resume) {
+        try {
+            resumeService.save(resume);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+        return "findAllUser";
     }
 
     @RequestMapping("delete")
     public String delete(String id) {
         try {
             resumeService.delete(id);
-            return "redirect:/resume/findAll1";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "redirect:/resume/findAll1";
     }
 
     @RequestMapping("findById")
@@ -71,22 +81,24 @@ public class ResumeController {
         try {
             Resume resume = resumeService.findById(id);
             request.setAttribute("resume", resume);
-            return "findByIdResult";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "findByIdResult";
     }
 
     @RequestMapping("update")
     public String update(Resume resume) {
         try {
             resumeService.update(resume);
-            return "add";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "add";
     }
 
     @RequestMapping("findByIdUpdate")
@@ -94,11 +106,11 @@ public class ResumeController {
         try {
             Resume resume = resumeService.findById(id);
             request.setAttribute("resume", resume);
-            return "update2";
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "update2";
     }
 
     @RequestMapping("findByName")
@@ -106,10 +118,17 @@ public class ResumeController {
         try {
             List<Resume> resume = resumeService.findByName(name);
             request.setAttribute("resumes", resume);
-            return "findByName";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "findByName";
+    }
+
+    @RequestMapping("deleteByIds")
+    public String deleteByIds(String[] id){
+            resumeService.deleteList(id);
+            return "findAll1";
     }
 }

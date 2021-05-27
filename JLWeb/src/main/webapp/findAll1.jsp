@@ -39,10 +39,10 @@
 	border-radius:20px;">
 
     <div style="width:5%;height:5%; ">
-        <input type="submit" value="删除选中的所有信息" style="border-radius:20px">
+        <input type="submit" value="删除选中的所有信息" style="border-radius:20px" onclick="del()" id="deleteAll">
     </div>
 
-    <div style="width:20%;float:left;">身份证号</div>
+    <div style="width:20%;float:left;">身份证号后8位</div>
     <div style="width:19%;float:left;">姓名</div>
     <div style="width:19%;float:left;">学校</div>
     <div style="width:19%;float:left;">专业</div>
@@ -51,7 +51,7 @@
 
     <form action="${pageContext.request.contextPath}/resume/delete" method="post">
         <div style="width:20%;float:left;">
-            <input type="checkbox" value="custom" name="id">
+            <input type="checkbox" value="${resume.id}" name="box">
             <input type="submit"  value="删除" style="border-radius:20px">
             <input type="text" name="id" value="${resume.id}" style="display: none">
             ${resume.id}
@@ -187,6 +187,51 @@ border-radius:20px;">
         </a>
     </div>
 </div>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+    //全选
+    var oid=document.getElementsByName("box");
+    /*封面图-批量删除*/
+    function del(){
+        var r=confirm("是否确认删除？");
+        var id;
+        if (r == true) {
+            alert("删除成功！");
+            //确认删除
+            var n = 0;
+            var ids = "";
+            for (var i = 0; i < oid.length; i++) {
+                if (oid[i].checked == true) {   //选中为true
+                    id = oid[i].value;
+                    if (n == 0) {
+                        ids += "id=" + id;
+                    } else {
+                        ids += "&id=" + id;
+                    }
+                    n++;
+                }
+            }
+            //上面会拼接出一个名为ids的数组ids=1&ids=2&ids=3&ids=4……
+            $.get("deleteByIds", ids, function (data) {
+                if (data == "ok") {
+                    alert("删除成功!");
+                    //删除成功后，调用action方法刷新页面信息
+                    location.reload();
+                    $("input[name=id]").removeAttr("checked");
+                } else {
+                  alert("请刷新页面！");
+                }
+            });
+            return true;
+        } else {
+            //不删除
+            alert("请选中行！");
+            return false;
+        }
+    }
+</script>
 
 </body>
 </html>

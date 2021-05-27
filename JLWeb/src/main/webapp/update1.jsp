@@ -22,7 +22,7 @@
 		-webkit-box-shadow: #ccc 0px 0px 10px;
  		-moz-box-shadow: #ccc 0px 0px 10px;
  		box-shadow: #bbb 10px 10px 30px;"><br>
-        请输入您想修改信息对应的身份证号：<br><br><input type="text" name="id"/> <br><br>
+        请输入您想修改信息对应的身份证号后8位：<br><br><input type="text" name="id" maxlength="8"> <br><br>
 
         <input type="submit" value="重构用户信息">
         </div>

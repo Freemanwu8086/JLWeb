@@ -21,5 +21,5 @@ public interface ResumeDAO {
 
     List<Resume> findByName(String name);
 
-    void deleteMany(String id);
+    void deleteList(String[] id);
 }

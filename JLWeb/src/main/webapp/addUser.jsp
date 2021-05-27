@@ -21,7 +21,7 @@ border: 10px solid #ccc; border-radius: 16px;">
     个人简历
 </h1>
 <body style="text-align: center">
-<form action="${pageContext.request.contextPath}/resume/save" method="post">
+<form action="${pageContext.request.contextPath}/resume/userSave" method="post">
 <table border="2"
        cellspacing="1px"
        style="margin:auto;"

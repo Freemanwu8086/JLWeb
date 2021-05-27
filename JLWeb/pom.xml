@@ -148,6 +148,11 @@
       <artifactId>commons-fileupload</artifactId>
       <version>1.4</version>
     </dependency>
+      <dependency>
+          <groupId>com.freemanwu</groupId>
+          <artifactId>JLWeb</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
 
   </dependencies>
 

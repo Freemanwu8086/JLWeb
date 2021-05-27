@@ -84,8 +84,8 @@ border: 10px solid #ccc; border-radius: 16px;">
         <td><input type="text" name="nationality"></td>
     </tr>
     <tr height="50" style="text-align: center;">
-        <td class="style1">身份证号码(*)</td>
-        <td colspan="2"><input type="text" name="id"></td>
+        <td class="style1">身份证号码(请输入身份证号后8位！*)</td>
+        <td colspan="2"><input type="text" name="id" maxlength="8"></td>
         <td class="style1">个人邮箱(*)</td>
         <td colspan="3"><input type="text" name="email"></td>
     </tr>

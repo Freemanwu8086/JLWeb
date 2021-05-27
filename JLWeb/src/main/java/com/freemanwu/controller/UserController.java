@@ -22,11 +22,12 @@ public class UserController {
     public String save(User user){
         try {
             userService.save(user);
-            return "WelcomeAdmin";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+        return "WelcomeAdmin";
     }
 
 

@@ -60,8 +60,7 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteMany(String id) {
-        resumeDAO.deleteMany(id);
+    public void deleteList(String[] id) {
+        resumeDAO.deleteList(id);
     }
 }
